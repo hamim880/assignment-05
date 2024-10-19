@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky bg-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="assets/logo.png" alt="Donate Bangladesh" class="h-8">
+                <h1 class="text-2xl font-bold">Donate Bangladesh</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="text-white bg-green-500 px-4 py-2 rounded">Blog</button>
+                <div id="total-balance" class="text-yellow-500 font-bold">5500 BDT</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tabs for Donation and History -->
+    <section class="container  mx-auto py-8">
+        <div class="flex justify-center space-x-4">
+            <button id="donation-tab" class="px-4 py-2 bg-green-500 text-white rounded">Donation</button>
+            <button id="history-tab" class="px-4 py-2 bg-gray-300 rounded">History</button>
+        </div>
+
+        <!-- Donation Section -->
+        <div id="donation-section" class="mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Donation Card: Noakhali Flood -->
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                    <img src="assets/noakhali.png" alt="Noakhali Flood" class="rounded-lg w-full h-48 object-cover">
+                    <h2 class="text-xl font-bold mt-4">Donate for Flood at Noakhali, Bangladesh</h2>
+                    <p class="mt-2 text-gray-600">The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster.</p>
+                    <input type="number" id="noakhali-donation" class="w-full mt-4 p-2 border rounded" placeholder="Write Donation Amount">
+                    <button class="w-full bg-green-500 text-white mt-4 p-2 rounded" onclick="donate('noakhali-donation')">Donate Now</button>
+                </div>
+
+                <!-- Donation Card: Feni Flood -->
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                    <img src="assets/feni.png" alt="Feni Flood" class="rounded-lg w-full h-48 object-cover">
+                    <h2 class="text-xl font-bold mt-4">Donate for Flood Relief in Feni, Bangladesh</h2>
+                    <p class="mt-2 text-gray-600">The recent floods in Feni have devastated local communities, leading to severe disruption. Your donation will help provide immediate aid, including food, clean water, and medical supplies.</p>
+                    <input type="number" id="feni-donation" class="w-full mt-4 p-2 border rounded" placeholder="Write Donation Amount">
+                    <button class="w-full bg-green-500 text-white mt-4 p-2 rounded" onclick="donate('feni-donation')">Donate Now</button>
+                </div>
+
+                <!-- Donation Card: Quota Movement Aid -->
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                    <img src="assets/quota-protest.png" alt="Quota Movement" class="rounded-lg w-full h-48 object-cover">
+                    <h2 class="text-xl font-bold mt-4">Aid for Injured in the Quota Movement</h2>
+                    <p class="mt-2 text-gray-600">The recent Quota movement has resulted in numerous injuries. Your support is crucial in providing medical assistance, rehabilitation, and supplies to those affected.</p>
+                    <input type="number" id="quota-donation" class="w-full mt-4 p-2 border rounded" placeholder="Write Donation Amount">
+                    <button class="w-full bg-green-500 text-white mt-4 p-2 rounded" onclick="donate('quota-donation')">Donate Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Section (Initially Hidden)-->
+        <div id="history-section" class="hidden mt-8">
+            <h2 class="text-2xl font-bold text-center">Donation History</h2>
+            <ul id="history-list" class="mt-4">
+             
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>&copy; 2024 Donate Bangladesh. All Rights Reserved.</p>
+    </footer>
+
+    <script src="donate.js"></script>
+    
+</body>
+</html>
